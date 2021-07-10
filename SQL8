@@ -1,0 +1,39 @@
+update employee
+set name = 'out'
+where birthday > '1988-01-01';
+
+update employee
+set email = 'changed'
+where id between 12 and 40
+
+update employee
+set birthday = '1988-01-27'
+where name like 'D%';
+
+update employee
+set name = 'Patricia Monroe'
+where id = 38;
+
+update employee
+set name = 'Patricia Monroe'
+where id = 38;
+---------------------------------------
+delete from employee
+where id > 49
+returning *;
+
+delete from employee
+where email like '%ma%'
+returning *;
+
+delete from employee
+where id between 16 and 18
+returning *;
+
+delete from employee
+where birthday > '1995-12-01'
+returning *;
+
+delete from employee
+where name like '%lai%'
+returning *;
