@@ -12,7 +12,7 @@ where rental_rate =
 (select min(rental_rate) from film)
 and replacement_cost=
 (select min(replacement_cost) from film);
---3
+--4
 select customer_id, (select sum(amount) from payment) toplam from payment
 group by customer_id
 order by toplam
