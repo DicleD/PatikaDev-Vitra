@@ -1,0 +1,24 @@
+--1
+select length, title from film
+where length > all
+(select avg(length) from film);
+--2
+select count(*) from film
+where rental_rate = 
+(select max(rental_rate) from film);
+--3
+select title from film
+where rental_rate = 
+(select min(rental_rate) from film)
+and replacement_cost=
+(select min(replacement_cost) from film);
+--3
+select * from payment;
+select customer_id from payment
+where amount = 
+(select max(amount) from payment);
+--doğrusu
+order by amount;
+select customer_id, sum(amount) toplam from payment
+group by customer_id
+order by toplam desc
